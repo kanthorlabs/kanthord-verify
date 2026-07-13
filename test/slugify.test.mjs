@@ -9,3 +9,7 @@ test('slugify lowercases words and joins them with hyphens', () => {
 test('slugify trims duplicate separators and removes accents', () => {
   assert.equal(slugify('  Café -- déjà vu  '), 'cafe-deja-vu');
 });
+
+test('slugify preserves git-holdpoint marker text in the output', () => {
+  assert.equal(slugify('github.create_pr'), 'github-create_pr');
+});
